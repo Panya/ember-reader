@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ember Reader</title>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <script type="text/x-handlebars" data-template-name="application">
+            <div class="b-header">{{title}}</div>
+            <div class="b-sidebar">
+                <div class="b-add-feed">
+                    {{outlet addField}}
+                </div>
+                <div class="b-feeds">
+                    {{outlet feeds}}
+                </div>
+            </div>
+            <div class="b-content">
+                {{outlet body}}
+            </div>
+        </script>
+
+        <script type="text/x-handlebars" data-template-name="feeds">
+            {{#each feed in controller}}
+                <li class="b-feeds-list__item"><a {{action showEntries feed}} title="{{unbound feed.title}}"">{{feed.title}}</a></li>
+            {{/each}}
+        </script>
+
+        <script type="text/x-handlebars" data-template-name="entries">
+            {{#if controller}}
+                {{#each entry in controller}}
+                    {{#with entry}}
+                        <div class="b-entry">
+                            <h2 class="b-entry__title"><a href="{{unbound link}}" target="_blank">{{title}}</a></h2>
+                            <div class="b-entry__date">{{publishedDate}}</div>
+                            <div class="b-entry__body">
+                                {{{unbound content}}}
+                            </div>
+                        </div>
+                    {{/with}}
+                {{/each}}
+            {{/if}}
+        </script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="//cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.rc.1.js"></script>
+        <script src="//cloud.github.com/downloads/emberjs/ember.js/ember-1.0.0-pre.2.min.js"></script>
+        <script src="//www.google.com/jsapi"></script>
+        <script src="js/application.js"></script>
+        <script src="js/router.js"></script>
+        <script src="js/feeds.js"></script>
+        <script src="js/entries.js"></script>
+        <script>EmReader.initialize();</script>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font: .8em/1.4 Helvetica, Arial, sans-serif;
+    background: #fff;
+    color: #000;
+    margin: 0;
+}
+
+.b-app {
+    position: relative;
+    height: 100%;
+}
+
+.b-header {
+    background: #333;
+    color: #fff;
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+.b-sidebar,
+.b-content {
+    position: absolute;
+    top: 5em;
+    bottom: 0;
+}
+
+.b-sidebar {
+    background: #ccc;
+    width: 300px;
+    left: 0;
+}
+
+.b-content {
+    background: #fafafa;
+    left: 300px;
+    right: 0;
+}
+
+.b-add-feed {
+    padding: .4em;
+}
+
+.b-add-feed .b-input {
+    width: 280px;
+    font-size: 1.3em;
+    margin: 0 0 .4em;
+}
+
+.b-feeds-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.b-feeds-list__item {
+    cursor: pointer;
+    font-size: 1.2em;
+    background: #666;
+    color: #fff;
+    padding: .4em;
+    border-bottom: 1px solid #eee;
+}
+
+.b-feeds-list__item a {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.b-content {
+    overflow: auto;
+    padding: .4em 2em;
+}
+
+.b-entry {
+    position: relative;
+    font-size: 1.2em;
+    padding: 1em 0;
+    border-bottom: 2px solid #ccc;
+}
+
+.b-entry a {
+    color: #00c;
+}
+
+.b-entry a:hover {
+    text-decoration: none;
+}
+
+.b-entry__title a {
+    color: inherit;
+}
+
+.b-entry__body img {
+    max-width: 100%;
+}
+
+.b-entry__date {
+    position: absolute;
+    top: .5em;
+    right: .2em;
+    font-size: .8em;
+    color: #333;
+}

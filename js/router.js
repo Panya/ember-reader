@@ -23,11 +23,6 @@ EmReader.Router = Em.Router.extend({
                 },
                 connectOutlets: function(router, context) {
                     router.get('feedsController').set('selected', context);
-
-                    var entries = router.get('entriesController');
-                    setTimeout(function() {
-                        entries.set('content', context.get('entries'));
-                    }, 500);
                 }
             })
         }),

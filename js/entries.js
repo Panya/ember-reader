@@ -1,5 +1,5 @@
 EmReader.EntriesController = Em.ArrayController.extend({
-    content: []
+    contentBinding: 'EmReader.router.feedsController.selected.entries'
 });
 
 EmReader.EntriesView = Em.View.extend({

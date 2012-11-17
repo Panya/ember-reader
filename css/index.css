@@ -57,6 +57,7 @@ body {
 }
 
 .b-feeds-list__item {
+    cursor: pointer;
     font-size: 1.2em;
     background: #666;
     color: #fff;
